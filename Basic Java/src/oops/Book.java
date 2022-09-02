@@ -5,10 +5,7 @@
  */
 package oops;
 
-/**
- *
- * @author Ramjee Bharti
- */
+
 public class Book {
 
     String bookname, subject;

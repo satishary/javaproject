@@ -14,12 +14,12 @@ public class TaskDetail {
 
     }
 
-    public TaskDetail() {
+    public TaskDetail(int taskno) {
 
         Scanner s = new Scanner(System.in);
         System.out.println("Enter The Task Detail");
         System.out.println("Task Number");
-         taskno = Integer.parseInt(s.nextLine());
+        this.taskno = taskno;
         System.out.println("Task Name");
         taskname = s.nextLine();
         System.out.println("Detail");
@@ -37,13 +37,6 @@ public void newStatus()
     @Override
     public String toString() {
         return "Taskdetail{" + "taskno=" + taskno + ", taskname=" + taskname + ", detail=" + detail + ", status=" + status + '}';
-    }
-
-    public static void main(String[] args) {
-        TaskDetail t = new TaskDetail();
-        System.out.println(t);
-        Task t1=new Task();
-        System.out.println(t1);
     }
 
 }

@@ -46,8 +46,8 @@ public class NUMTOWORD {
 
     }
 
-    public static void main(String args[]) {
-        unitToWord(10);
-    }
 
+    public static void main(String args[]) {
+       unitToWord(8);
+    }
 }
