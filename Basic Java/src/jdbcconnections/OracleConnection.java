@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
 
 public class OracleConnection {
@@ -12,7 +13,7 @@ public class OracleConnection {
         Scanner scanner = new Scanner(System.in);
         Connection connection = DbConnect.connect();
         while (true) {
-            System.out.println("0-Exit, 1-Insert, 2-Search, 3-Search All, 4-Update, 5-Delete,6-");
+            System.out.println("0-Exit, 1-Insert, 2-Search, 3-Search All, 4-Update, 5-Delete,6-Select by name");
             int option = Integer.parseInt(scanner.nextLine());
             switch (option) {
                 case 0:
@@ -31,7 +32,7 @@ public class OracleConnection {
                 case 2: {
                     System.out.println("Enter the rollno");
                     String rollno = scanner.nextLine();
-                    PreparedStatement statement = connection.prepareStatement("select * from student where rollno=?");
+                    PreparedStatement statement = connection.prepareStatement("select * from students where rollno=?");
                     statement.setString(1, rollno);
                     ResultSet rs = statement.executeQuery();
                     if (!rs.next()) {
@@ -88,9 +89,26 @@ public class OracleConnection {
                     int n = ps.executeUpdate();
                     System.out.println(n + "records deleted");
                     break;
-                }
-                default:
 
+                }
+                case 6: {
+                    System.out.println("Select by Name");
+                    PreparedStatement ps = connection.prepareStatement("Select * from students where name=?");
+                    String name;
+                    System.out.println("Name");
+                    name = scanner.nextLine();
+                    ps.setString(1, name);
+                    ResultSet rs = ps.executeQuery();
+                    if (!rs.next()) {
+                        System.out.println("not found");
+                        break;
+                    }
+                    String rollno = "" + rs.getObject("rollno");
+                    System.out.println(rollno);
+                }
+                break;
+                default:
+  
                     System.out.println("Invalid");
                     break;
             }
