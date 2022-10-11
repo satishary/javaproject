@@ -38,14 +38,14 @@
                         measurement = request.getParameter("measurement");
                         productcategory = request.getParameter("productcategory");
 
-                        PreparedStatement ps = DbConnect.connect().prepareStatement("insert into products values(?,?,?,?,?,?,?)");
-                        ps.setString(1, productid);
-                        ps.setString(2, productname);
-                        ps.setString(3, price);
-                        ps.setString(4, description);
-                        ps.setString(5, discount);
-                        ps.setString(6, measurement);
-                        ps.setString(7, productcategory);
+                        PreparedStatement ps = DbConnect.connect().prepareStatement("insert into products values(productseq.nextval,?,?,?,?,?,?)");
+                        
+                        ps.setString(1, productname);
+                        ps.setString(2, price);
+                        ps.setString(3, description);
+                        ps.setString(4, discount);
+                        ps.setString(5, measurement);
+                        ps.setString(6, productcategory);
 
                         int n = ps.executeUpdate();
                         result = "Inserted " + n + " records";
@@ -61,8 +61,7 @@
         <form method="post">
             <input type="hidden" name="check" value="1">
 
-            productid<input name="productid" value="<%=productid%>" type="text">
-            <br>
+          
             <br>
             productname<input name="productname" value="<%=productname%>" type="text">
             <br>
@@ -88,6 +87,7 @@
 
 
         </form>
+            <iframe style="width: 100%; border-style: none;height: 500px;" src="productlist.jsp"></iframe>
     </center>
 </body>
 </html>

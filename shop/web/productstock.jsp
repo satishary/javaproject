@@ -12,7 +12,7 @@
     <center>
         <h1>Product Stock</h1>
 
-0.
+
 
         <%
 

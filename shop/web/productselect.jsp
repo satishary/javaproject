@@ -1,4 +1,3 @@
-+
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="database.DbConnect"%>
@@ -10,15 +9,15 @@
         <title>Product Select</title>
     </head>
     <body>
-        <center>
-            <h1>Product Select</h1>
-  <%
+    <center>
+        <h1>Product Select</h1>
+        <%String productid ="" + request.getParameter("product");
             PreparedStatement statement = DbConnect.connect().prepareStatement("select productid,productname from products  order by productname");
             ResultSet rs = statement.executeQuery();
         %>
         <form>
             <input type="hidden" name="check">
-            <%                String check = "",result="";
+            <%                String check = "", result = "";
                 check = request.getParameter("check");
                 boolean ispostback = true;
                 if (check == null) {
@@ -28,50 +27,45 @@
             <select name="product">
                 <option>Select</option>
                 <%                while (rs.next()) {
-                        String productid = "" + rs.getObject("productid");
+                        String rsproductid = "" + rs.getObject("productid");
                         String productname = "" + rs.getObject("productname");
+                        if (productid.equals(rsproductid)) {
                 %>
-                <option value="<%=productid%>"><%=productname%></option>
+
+                <option selected value="<%=rsproductid%>"><%=productname%></option>
                 <%
+                } else {
+                %>
+
+                <option value="<%=rsproductid%>"><%=productname%></option>
+                <%
+                        }
+
                     }
                 %>
                 Quantity<input name="quantity" value="1" type="number" min="1">
                 <input type="submit" value="Submit">
             </select>
-                <%
-                if(ispostback)
-                {
-                    try{                       
-                  
-                    String productid=request.getParameter("product");
-                    String quantity=request.getParameter("quantity");
-                    PreparedStatement ps=DbConnect.connect().prepareStatement("insert into productlist values(?,?)");
-                    ps.setString(1, productid);
-                    ps.setString(2, quantity);
-                    ps.executeUpdate();
-                    int n=ps.executeUpdate();
-                    result="Inserted " + n + " records";
-                    }
-                    catch(Exception ex)
-                    {
-                System.out.println(ex);
-              result= ex.getMessage();
-                }
-                }
-               %>
-        <table border="1">
-            <tr><th>productid</th><th>quantity</th></tr>
             <%
-                while (rs.next()) {
-                    String product = "" + rs.getObject("product");
-                    String quantity = "" + rs.getObject("quantity");
-            %>
-            
+                if (ispostback) {
+                    try {
 
-            <%
+                        String quantity = request.getParameter("quantity");
+                        PreparedStatement ps = DbConnect.connect().prepareStatement("insert into productstock values(?,?)");
+                        ps.setString(1, productid);
+                        ps.setString(2, quantity);
+                        ps.executeUpdate();
+                        int n = ps.executeUpdate();
+                        result = "Inserted " + n + " records";
+                    } catch (Exception ex) {
+                        System.out.println(ex);
+                        result = ex.getMessage();
+                    }
                 }
             %>
+           
         </form>        
-        </center>
-    </body>
+         <iframe style="width: 100%; border-style: none;height: 500px;" src="itemlist.jsp"></iframe>
+    </center>
+</body>
 </html>
