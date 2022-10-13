@@ -1,7 +1,23 @@
 
 
 <div>
-    Footer
+    <style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: orchid;
+  color: white;
+  text-align: center;
+}
+</style>
+ 
+<div class="footer">
+  <p>Footer </p>
+  
+
+</div>
 </div>
 
 

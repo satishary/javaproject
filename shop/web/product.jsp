@@ -8,6 +8,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Show Management</title>
+        <style>
+        div {
+        margin-bottom: 10px;
+      }
+      label {
+        display: inline-block;
+        width: 150px;
+        text-align: right;
+      }
+    </style>
     </head>
     <body>
     <center>
@@ -60,27 +70,25 @@
         <%=result%>
         <form method="post">
             <input type="hidden" name="check" value="1">
-
-          
+             <label>productname</label>
+            <input name="productname" value="<%=productname%>" type="text">
             <br>
-            productname<input name="productname" value="<%=productname%>" type="text">
+             <label>price</label>
+            <input name="price" value="<%=price%>" type="number">
             <br>
+             <label>description</label>
+            <input name="description" value="<%=description%>" type="text">
             <br>
-            price<input name="price" value="<%=price%>" type="number">
+             <label>discount</label>
+            <input name="discount"value="<%=discount%>" type="number">
             <br>
+             <label>Measurement</label>
+            <input name="measurement" value="<%=measurement%>" type="text">
             <br>
-            description<input name="description" value="<%=description%>" type="text">
+             <label>Product Category</label>
+            <input name="productcategory" value="<%=productcategory%>" type="text">
             <br>
-            <br>
-            discount<input name="discount"value="<%=discount%>" type="number">
-            <br>
-            <br>
-            Measurement<input name="measurement" value="<%=measurement%>" type="text">
-            <br>
-            <br>
-            Product Category<input name="productcategory" value="<%=productcategory%>" type="text">
-            <br>
-            <br>
+         
             <input name="option" type="submit">
 
             <input name="option" type="submit" value="Clear">
