@@ -61,7 +61,7 @@
 
           
             <br>
-            productname<input name="productname" value="<%=productname%>" type="text">
+            productname<input class="form-control" name="productname" value="<%=productname%>" type="text">
             <br>
             <br>
             price<input name="price" value="<%=price%>" type="number">
