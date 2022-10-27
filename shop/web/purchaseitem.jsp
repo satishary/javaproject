@@ -54,15 +54,20 @@
         %>
         <form>
             <h3><%=result%></h3>
+            
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
 
             <form method="post">
 
-                <input type="hidden"  name="check" value="1"><br>
+                <input class="form-control" type="hidden"  name="check" value="1"><br>
 
-                receiptno<input value="<%=receiptno%>" autocomplete="off" name="reciptno" type="number"><br>
+                receiptno<input class="form-control" value="<%=receiptno%>" autocomplete="off" name="reciptno" type="number">
                 productid<%=SelectBoxes.getProductsList("4", "productid")%><br>
-                quantity<input value="<%=quantity%>" autocomplete="off" name="quantity" type="number"><br>
-                price<input value="<%=price%>" autocomplete="off" name="price" type="number"><br>
+                quantity<input class="form-control" value="<%=quantity%>" autocomplete="off" name="quantity" type="number">
+                price<input class="form-control" value="<%=price%>" autocomplete="off" name="price" type="number">
                 <input name="option" type="submit">
 
             </form>

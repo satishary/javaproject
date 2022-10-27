@@ -54,19 +54,27 @@
 
         %>
         <%=result%>
+        
+          <!--***********************************************-->
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-3"></div> 
+                    <div class="col-md-6">
+                
         <form method="post">
             <input type="hidden" name="check" value="1">
+            
 
-            productid<input name="productid" value="<%=productid%>" type="text">
-            <br>
-            <br>
-            quantity<input name="quantity" value="<%=quantity%>" type="number">
+            productid<input class="form-control" name="productid" value="<%=productid%>" type="text">
+            
+            
+            quantity<input class="form-control" name="quantity" value="<%=quantity%>" type="number">
             <br>
             <input name="option" type="submit">
             <br>
             <input name="option" type="submit" value="Clear">
 
-
+            
 
             </center>
             </body>

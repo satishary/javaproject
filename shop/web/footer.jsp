@@ -13,7 +13,7 @@
 }
 </style>
  
-<div class="footer">
+<div class=" ">
   <p>Footer </p>
   
 

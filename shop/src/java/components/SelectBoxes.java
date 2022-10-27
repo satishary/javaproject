@@ -43,6 +43,7 @@ public static String getProductsList(String selector,String name)
              output+="</select>\n";
              return output;
     }
+    
     catch(Exception ex)
     {
         System.out.println(ex);

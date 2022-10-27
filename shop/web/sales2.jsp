@@ -67,20 +67,30 @@
 
         <form>
             <h3><%=result%></h3>
+
+            
+          <!--***************************************************-->
+          <div class="container text-center">
+              <div class="row">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-6">
+                      
+            
+            
+            
             <input type="hidden"  name="check" value="1"><br>
-            receiptNo<input value="<%=receiptNo%>" autocomplete="off" name="receiptNo" type="number"><br>
-            dateofsale<input name="dateofsale" autocomplete="off" value="<%=dateofsale%>" type="date"><br>
-            customername<input name="customername" autocomplete="off" value="<%=customername%>" type="text"><br>
-            customeraddress<input name="customeraddress" autocomplete="off" value="<%=customeradress%>" type="text"><br>
-            customerphones<input name="customerphones" autocomplete="off" value="<%=customerphones%>" type="number"><br>
-            customeremail<input name="customeremail" autocomplete="off" value="<%=customeremail%>" type="tet"><br>
-            amountpaid<input name="amountpaid" autocomplete="off" value="<%=amountpaid%>"type="number"><br>
-            amountpending<input name="amountpending" autocomplete="off" value="<%=amountpending%>" type="number"><br>
-            remarks<input name="remarks" autocomplete="off" value="<%=remarks%>" type="text"><br>
+            receiptNo<input class="form-control" value="<%=receiptNo%>" autocomplete="off" name="receiptNo" type="number"><br>
+            dateofsale<input class="form-control" name="dateofsale" autocomplete="off" value="<%=dateofsale%>" type="date"><br>
+            customername<input class="form-control" name="customername" autocomplete="off" value="<%=customername%>" type="text"><br>
+            customeraddress<input class="form-control" name="customeraddress" autocomplete="off" value="<%=customeradress%>" type="text"><br>
+            customerphones<input class="form-control" name="customerphones" autocomplete="off" value="<%=customerphones%>" type="number"><br>
+            customeremail<input class="form-control" name="customeremail" autocomplete="off" value="<%=customeremail%>" type="tet"><br>
+            amountpaid<input class="form-control" name="amountpaid" autocomplete="off" value="<%=amountpaid%>"type="number"><br>
+            amountpending<input class="form-control" name="amountpending" autocomplete="off" value="<%=amountpending%>" type="number"><br>
+            remarks<input class="form-control" name="remarks" autocomplete="off" value="<%=remarks%>" type="text"><br>
             <input type="submit">
 
             </center>
-
              </body>
             </html>
             <%@include file="footer.jsp" %>
